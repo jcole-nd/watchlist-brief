@@ -104,6 +104,9 @@ section { margin-bottom: 2rem; }
 footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; padding: 1rem 0 2rem; }
 footer p { margin: .2rem 0; }
 
+/* Tap targets: every link is at least 44px tall */
+.tape .sym a, .items .h a, .items .src a, .items a.src, .cal a, footer a { display: inline-flex; align-items: center; min-height: 44px; }
+
 @media (max-width: 420px) {
   .tape li { grid-template-columns: minmax(0,1fr) 92px 84px; }
   .tape svg { width: 92px; }
@@ -117,6 +120,7 @@ footer p { margin: .2rem 0; }
   .banner { border-left-color: #000; background: #fff; color: #000; }
   .wrap { max-width: none; padding: 0; }
   a { color: #000; text-decoration: none; }
+  .tape .sym a, .items .h a, .items .src a, .items a.src, .cal a, footer a { display: inline; min-height: 0; }
   .items .h a::after { content: " (" attr(href) ")"; font-size: 8.5pt; color: #444; }
   .co { break-inside: avoid; }
   #changelog, .no-print { display: none; }
@@ -167,14 +171,14 @@ footer p { margin: .2rem 0; }
 /* ===== DATA. The refresh-brief agent edits BRIEF and CHANGELOG only. ===== */
 
 const WATCHLIST = {
-  owner: "Your Name",
+  owner: "James",
   club: "SIBC",
   repo: "",
   tickers: [
     { symbol: "NVDA", name: "NVIDIA", exchange: "NASDAQ", why: "The AI capex cycle in one ticker. If this moves, the whole list moves." },
     { symbol: "JPM",  name: "JPMorgan Chase", exchange: "NYSE", why: "The bank every banking recruit should be able to talk about for five minutes." },
     { symbol: "ACN",  name: "Accenture", exchange: "NYSE", why: "The consulting bellwether. Its bookings tell you how clients feel about spending." },
-    { symbol: "DE",   name: "Deere", exchange: "NYSE", why: "Midwest industrial. Farm income, tariffs, and rates all show up here." },
+    { symbol: "WM",   name: "Waste Management", exchange: "NYSE", why: "The largest US waste hauler and landfill operator. A steady, defensive read on the economy and pricing power." },
     { symbol: "LLY",  name: "Eli Lilly", exchange: "NYSE", why: "Indiana's largest company and the GLP-1 story." }
   ]
 };
